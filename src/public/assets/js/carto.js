@@ -236,21 +236,19 @@ $(document).ready(function () {
         } else {
             stations[station.id] = L.marker([station.latitude, station.longitude], {icon: iconStation(station)}).bindPopup(getTooltipStation()).addTo(stationLayer);
         }
-        $('.event > tbody').prepend('<tr><td>' + station.mdate + '</td><td>station : <a href="parking/' + station.id + '>"' + station.nom + '</a></td></tr>');
+        $('.event > tbody').prepend('<tr><td>' + station.mdate + '</td><td>station : <a href="parking/' + station.id + '">' + station.nom + '</a></td></tr>');
     };
 
     const eventParkings = new EventSource('http://localhost:8080/.well-known/mercure?topic=http://localhost:8000/parkings');
     eventParkings.onmessage = function (event) {
         const parking = JSON.parse(event.data);
-        console.log(parking)
-        console.log(parkings[parking.id])
         if (parkings[parking.id]) {
             parkings[parking.id].getPopup().setContent(getTooltipParking(parking));
             parkings[parking.id].getPopup().update();
         } else {
             parkings[parking.id] = L.marker([parking.latitude, parking.longitude], {icon: iconParking(parking)}).bindPopup(getTooltipParking(parking)).addTo(parkingLayer);
         }
-        $('.event > tbody').prepend('<tr><td>' + parking.mdate + '</td><td>parking : <a href="parking/' + parking.id + '>"' + parking.nom + '</a></td></tr>');
+        $('.event > tbody').prepend('<tr><td>' + parking.mdate + '</td><td>parking : <a href="parking/' + parking.id + '">' + parking.nom + '</a></td></tr>');
     };
 
     const eventTrafics = new EventSource('http://localhost:8080/.well-known/mercure?topic=http://localhost:8000/trafics');

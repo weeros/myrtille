@@ -18,7 +18,7 @@ final class BatchController extends AbstractController
         $lines = new LimitIterator($file, $last_line - $number, $last_line);
         return iterator_to_array($lines);
     }
-    #[Route('/', name: 'batch_index')]
+    #[Route('/batch', name: 'batch_index')]
     public function index(): Response
     {
         return $this->render('batch/index.html.twig', [
