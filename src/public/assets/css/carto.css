@@ -17,7 +17,14 @@ section {
     border-radius: 26px;
 }
 
-.event-container {
+.map-show-container {
+    .leaflet-container {
+        height: 60vh;
+        width: 40vw;
+    }
+}
+
+.panel-container {
     overflow: auto;
     width: 30vw;
     height: 80vh;

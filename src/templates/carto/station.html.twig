@@ -2,7 +2,7 @@
 
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="/assets/css/station.css" />
+    <link rel="stylesheet" href="/assets/css/carto.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 {% endblock %}
 
@@ -12,10 +12,10 @@
 {% endblock %}
 
 {% block content %}
-    <article>
-        <div id='map'></div>
+    <article class='map-show-container'>
+        <div id='map' ></div>
     </article>
-    <article>
+    <article class='panel-container'>
         <table>
             <tr>
                 <td>Gid</td>
