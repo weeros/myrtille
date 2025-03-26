@@ -1,0 +1,8 @@
+
+
+*/3 * * * *    root  cd /var/www/html  && /usr/bin/env PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin COLUMNS=72 ./bin/console opendata:station
+*/3 * * * *    root  cd /var/www/html  && /usr/bin/env PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin COLUMNS=72 ./bin/console opendata:parking
+*/3 * * * *    root  cd /var/www/html  && /usr/bin/env PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin COLUMNS=72 ./bin/console opendata:trafic
+
+*/10 * * * *    root  cd /var/www/html  && /usr/bin/env PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin COLUMNS=72 ./bin/console opendata:newsletter
+

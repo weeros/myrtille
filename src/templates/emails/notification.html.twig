@@ -1,0 +1,63 @@
+{# templates/emails/signup.html.twig #}
+<h1>Newsletter des derniers éléments Opendata</h1>
+
+Bonjour {{ user.name }}
+
+
+<h2>Stations Vcub</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Etat</th>
+            <th>Nb Vélos</th>
+            <th>Nb Places</th>
+            <th>Date mise à jour</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+    {% for station in stations %}
+        <tr>
+            <td>{{ station.nom }}</td>
+            <td>{{ station.etat }}</td>
+            <td>{{ station.nbvelos }}</td>
+            <td>{{ station.nbplaces }}</td>
+            <td>{{ station.mdate|date('Y-m-d H:i:s') }}</td>
+            <td><a href="http://localhost:8000/station/{{ station.id }}">Voir la station</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+<h2>Parking</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Etat</th>
+            <th>Nb Vélos</th>
+            <th>Nb Places</th>
+            <th>Informations</th>
+            <th>Date mise à jour</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+    {% for parking in parkings %}
+        <tr>
+            <td>{{ parking.nom }}</td>
+            <td>{{ parking.etat }}</td>
+            <td>{{ parking.placesVelos }}</td>
+            <td>{{ parking.placesVoitures }}</td>
+            <td>{{ parking.informations }}</td>
+            <td>{{ parking.mdate|date('Y-m-d H:i:s') }}</td>
+            <td><a href="http://localhost:8000/parking/{{ parking.id }}">Voir le parking</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

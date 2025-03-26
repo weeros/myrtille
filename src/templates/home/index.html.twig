@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<style>
+    .wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="wrapper">
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+    <ul>
+        <li><a href="{{ url('carto_index') }}">Cartographie</a></li>
+        <li><a href="http://localhost:8080">Mercure</a></li>
+        <li><a href="http://localhost:8025">Mailpit</a></li>
+    </ul>
+</div>
+{% endblock %}

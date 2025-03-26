@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000091">
+    <title>
+        {% block title %}
+            {{ pageTitle is defined ? ' - ' ~ pageTitle : ''}}
+        {% endblock %}
+    </title>
+    <!-- Défini la couleur de thème du navigateur (Safari/Android) -->
+    <link rel="stylesheet" href="/assets/css/menu.css" />
+
+    {% block stylesheets %}
+
+    {% endblock %}
+
+    {% block javascripts %}
+
+    {% endblock %}
+
+    <style>
+        {% block style %}
+
+        {% endblock %}
+    </style>
+
+
+</head>
+<body>
+{% block header %}
+    <header role="banner" class="fr-header">
+        <nav class="menu-bar">
+            <div class="group">
+                <img src="/assets/img/myrtille.png"  alt="logo myrtille"/>
+            </div>
+            <div class="group">
+                <span class="item title">Myrtille</span>
+            </div>
+            <div class="group">
+                <ul>
+                    <li><a href="{{ url('home') }}">Acceuil</a></li>
+                </ul>
+            </div>
+            <div class="group">
+                <ul>
+                    <li><a href="{{ url('carto_index') }}">Cartographie</a></li>
+                    <li><a href="{{ url('batch_index') }}">Batch</a></li>
+                </ul>
+            </div>
+            <div class="group">
+                <img src="/assets/img/myrtille.png"  alt="logo myrtille"/>
+            </div>
+        </nav>
+    </header>
+{% endblock %}
+{% block body %}
+
+    <section>
+        {% block content %}{% endblock %}
+    </section>
+
+    {% block pagescripts %}{% endblock %}
+{% endblock %}
+</body>
+
+
+<script>
+    {% block script %}
+    {% endblock %}
+</script>
+
+{% block postscript %}
+{% endblock %}
+
+</body>
+</html>
